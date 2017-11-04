@@ -1,0 +1,107 @@
+body{
+				font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif; 
+			}
+input[placeholder], [placeholder], *[placeholder] { 
+				color:#black !important; 
+			} 
+
+
+.header-top{
+	background-color: #e4393c;
+}
+
+
+.btn-topbar {
+	color:white !important;
+	
+}
+
+.btn-topbar:visited{
+	background-color: #c9292c !important;
+	color:black !important;
+}
+
+.btn-topbar:hover{
+	background-color: #c9292c !important;
+	color:black !important;
+}
+
+
+
+.form-control{
+	
+}
+
+
+.btn-news,.btn-news:hover{
+	color:black !important;
+	background-color: white !important;
+}
+
+.btn-news:visited,.btn-news:active{
+	background-color: #e4393c !important;
+	color:white !important;
+	border: none;
+	
+}
+
+.user-home .left-side{
+	background-color:#FCFDF8;
+	 
+}
+
+
+ .enrrolled-table{
+	overflow:hidden;
+	white-space:nowrap; 
+	table-layout: fixed;
+	width: 850px;
+	
+}
+
+
+
+.enrrolled-table .t-title{
+	overflow: hidden;
+}
+
+.right-bottom{
+	left:50%;
+	bottom:0;
+	position:absolute;
+}
+
+.course-description{
+	height: 25px;
+	overflow:hidden;
+	text-overflow : ellipsis;
+}
+
+
+.post-info .type{
+	font-size: 16px !important;
+	text-align: center;
+}
+
+.error{
+	color: #EC282B;
+}
+
+.step-comfirm .btn{
+	text-decoration: none;
+	color: aliceblue;
+	display: none
+	
+}
+
+.sfr li{
+	margin-bottom:12px;
+}
+
+
+
+
+
+
+/* ver 0.0.0.2 */
+

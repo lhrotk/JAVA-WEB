@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+<constant name="struts.i18n.encoding" value="utf-8"></constant>
+    <include file="struts-user.xml"/>
+    <include file="struts-class.xml"/>
+    <include file="struts-team.xml"/>
+    <package name="ututor-default" 
+			extends="struts-default">
+	   <interceptors>
+	     <interceptor name="checkstatus"
+	           class="com.ututor.interceptor.CheckLoginInterceptor"/>
+	     <interceptor-stack name="checkstack">
+	               <interceptor-ref name="checkstatus"/>
+	               <interceptor-ref name="defaultStack"/>
+	     </interceptor-stack>	
+	   </interceptors>	
+	 </package>
+ </struts>

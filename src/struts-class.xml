@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+    <struts>
+	<package name="ututor-course" namespace="/course" extends="ututor-default">
+			<action name="searchcourse" class="com.ututor.action.search.CourseSearchAction">
+				<result name="success">/course/unit.jsp</result>
+			</action>
+			<action name="teamlist" class="com.ututor.action.search.TeamListAction">
+				<result name="success">/course/teamOption.jsp</result>
+			</action>
+			<action name="showcourse" class="com.ututor.action.search.ShowCourseAction">
+				<result name="success">/course/course_show.jsp</result>
+			</action>
+			<action name="recommendcourse" class="com.ututor.action.search.RecommendAction">
+				<result name="success">/course/recommend.jsp</result>
+			</action>
+			<action name="filesearch" class="com.ututor.action.search.FileSearchAction">
+				<result name="success">/course/fileList.jsp</result>
+			</action>
+			
+			<action name="editfilesearch" class="com.ututor.action.search.FileSearchAction" method="edit">
+				<result name="success">/course/editFileList.jsp</result>
+			</action>
+	</package>
+</struts>

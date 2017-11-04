@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<package name="ututor-action" namespace="/action" extends="ututor-default">
+		<action name="regist" class="com.ututor.action.user.RegisterAction">
+			<result name="success">/action/emailVerify.jsp</result>
+			<result name="fail">/action/sign_up.jsp</result>
+		</action>
+		<action name="login" class="com.ututor.action.user.LoginAction">
+			<result name="login" type="redirect">/user/Redirect3.jsp</result>
+			<result name="code" type="redirect">/action/emailVerify.jsp</result>
+			<result name="lose">/action/login.jsp</result>
+		</action>
+		<action name="logout" class="com.ututor.action.user.LoginAction"
+			method="out">
+			<result name="success" type="redirect">/index.jsp</result>
+		</action>
+		<action name="checkclass" class="com.ututor.action.user.CheckClassAction">
+			<result name="success">/course/selectButton.jsp</result>
+		</action>
+	</package>
+	<package name="ututor-user" namespace="/user" extends="ututor-default">
+		<action name="changepsw" class="com.ututor.action.user.ChangePswAction">
+			<interceptor-ref name="checkstack" />
+			<result name="login" type="redirect">/action/Redirect1.jsp</result>
+			<result name="checkemail" type="redirect">/action/Redirect2.jsp</result>
+			<result name="fail">/user/user_psw_change.jsp</result>
+			<result name="success">/user/user_psw_change.jsp</result>
+		</action>
+		<action name="changemessage" class="com.ututor.action.user.ChangeMsgAction">
+			<interceptor-ref name="checkstack" />
+			<result name="login" type="redirect">/action/Redirect1.jsp</result>
+			<result name="checkemail" type="redirect">/action/Redirect2.jsp</result>
+			<result name="success" type="redirect">/user/user_info.jsp</result>
+		</action>
+		<action name="listcourse" class="com.ututor.action.user.ListCourseAction">
+			<interceptor-ref name="checkstack" />
+			<result name="login" type="redirect">/action/Redirect1.jsp</result>
+			<result name="checkemail" type="redirect">/action/Redirect2.jsp</result>
+			<result name="success">/user/user_course.jsp</result>
+		</action>
+		<action name="coursedetail" class="com.ututor.action.user.CourseDetailAction">
+			<interceptor-ref name="checkstack" />
+			<result name="login" type="redirect">/action/Redirect1.jsp</result>
+			<result name="checkemail" type="redirect">/action/Redirect2.jsp</result>
+			<result name="success">/user/user_course_detail.jsp</result>
+		</action>
+		<action name="assess" class="com.ututor.action.user.AssessAction">
+			<result name="fail" type="plainText" />
+			<result name="success" type="plainText" />
+			<result name="assessed" type="plainText" />
+		</action>
+		<action name="joincourse" class="com.ututor.action.user.SelectCourseAction">
+			<result name="success" type="plainText" />
+		</action>
+		<action name="dropcourse" class="com.ututor.action.user.DropCourseAction">
+			<result name="success" type="plainText"/>
+		</action>
+	</package>
+	<!--验证码 -->
+	<package name="demo" extends="json-default">
+		<action name="imagecode" class="com.ututor.action.ImageAction">
+			<result name="success" type="stream">
+				<param name="inputName">imageStream</param>
+			</result>
+		</action>
+		<action name="checkcode" class="com.ututor.action.CheckCodeAction">
+			<result type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<action name="checkemail" class="com.ututor.action.user.CheckEmailAction">
+			<result type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<action name="verifyemail" class="com.ututor.action.user.VerifyEmailAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<action name="sendcode" class="com.ututor.action.user.SendCodeAction">
+			<result type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<action name="uploadimage" class="com.ututor.action.upload.UploadImageAction">
+			<result type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<action name="uploadfile" class="com.ututor.action.upload.UploadFileAction">
+			<result type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+	</package>
+</struts>

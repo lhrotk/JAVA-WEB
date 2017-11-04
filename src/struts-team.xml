@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+    <struts>
+	<package name="ututor-team" namespace="/team" extends="ututor-default">
+			<action name="searchcourse" class="com.ututor.action.team.CreateCourseAction">
+				<result name="success">/course/unit.jsp</result>
+			</action>
+			<action name="teamlist" class="com.ututor.action.team.TeamListAction">
+				<result name="success">/team/teamOption.jsp</result>
+			</action>
+			<action name="tutorlist" class="com.ututor.action.team.TutorListAction">
+				<result name="success">/team/tutorOption.jsp</result>
+			</action>
+			<action name="postedclasslist" class="com.ututor.action.team.PostedClassListAction">
+				<result name="success">/team/postedClass.jsp</result>
+			</action>
+			<action name="checkauth" class="com.ututor.action.team.CheckAuthAction">
+				<result name="success">/team/editButton.jsp</result>
+				<result name="fail">/team/vain.jsp</result>
+			</action>
+			<action name="createclass" class="com.ututor.action.team.CreateCourseAction">
+				<result name="success" type="redirect">
+					<param name="location">course_release3.jsp</param>
+				</result>
+				<result name="fail">/team/course_release2.jsp</result>
+			</action>
+			<action name="createlesson" class="com.ututor.action.team.CreateLessonAction">
+				<result name="success" type="redirect">
+					<param name="location">../team/postedclasslist.action?pageNo=1</param>
+				</result>
+				<result name="fail">/team/course_release3.jsp</result>
+			</action>
+			<action name="deletefile" class="com.ututor.action.upload.DeleteFileAction">
+				<result name="success" type="plainText"/>
+			</action>
+			<action name="editclass" class="com.ututor.action.user.CourseDetailAction" method="edit">
+				<result name="success">/team/course_edit.jsp</result>
+			</action>
+			<action name="checkattendance" class="com.ututor.action.team.CheckAttendanceAction">
+				<result name="success">/team/attendance.jsp</result>
+			</action>
+			<action name="attendance" class="com.ututor.action.team.AttendanceAction">
+				<result name="success" type="chain">
+					<param name="actionName">checkattendance</param>
+				</result>
+			</action>
+	</package>
+</struts>
