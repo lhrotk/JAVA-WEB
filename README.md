@@ -5,14 +5,14 @@ Cram Schools:
 * School index page
 * Post course info
 * Change course price, time and classroom (automatic email notification)
-* Monitor student addendancy
+* Monitor student attendancy
 * Manage teaching team
 
 Cram Schools Tutors:
 * Post course info
 * Change course time and classroom (automatic email notification)
 * Upload teaching materials(change access authority)
-* Check the attendance records
+* Record attendancy
 
 Students:
 * Course recommendation
