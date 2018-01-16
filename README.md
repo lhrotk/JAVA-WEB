@@ -3,7 +3,7 @@ A platform designed for cram schools
 
 link: [www.ututoryork.com](http://www.ututoryork.com/) 
 
-(register service currently unavailable, you can try with testing account: jirachi385@126.com password: 12345678)
+(register service currently unavailable, you can try with testing tutor account: jirachi385@126.com password: 12345678)
 ## Functionality
 Cram Schools:
 * School index page
